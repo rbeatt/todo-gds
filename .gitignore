@@ -1,0 +1,37 @@
+# Build outputs
+bin/
+obj/
+
+# NuGet packages
+packages/
+.nuget/
+
+# Database files (SQLite)
+*.db
+*.db-shm
+*.db-wal
+
+# User-specific files
+*.user
+*.suo
+
+# IDE files
+.vscode/
+.vs/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Entity Framework migrations (if not committed)
+# Uncomment if you want to ignore migrations:
+# Migrations/
+
+# Static web assets (if generated)
+# wwwroot/lib/
