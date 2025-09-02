@@ -29,13 +29,8 @@ if (builder.Environment.IsDevelopment())
 else
 {
     // Use SQL Server for production
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    if (string.IsNullOrEmpty(connectionString))
-    {
-        throw new InvalidOperationException("Connection string 'DefaultConnection' not found. Check Key Vault secret 'ConnectionStrings--DefaultConnection'.");
-    }
     builder.Services.AddDbContext<TodoDbContext>(options =>
-        options.UseSqlServer(connectionString));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 }
 
 // Register TodoService
