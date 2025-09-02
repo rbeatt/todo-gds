@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Azure.Extensions.AspNetCore.Configuration.Secrets;
+using Azure.Identity;
 using TodoGDS.Data;
 using TodoGDS.Services;
 
@@ -6,6 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Debug: Log the environment
 Console.WriteLine($"Environment: {builder.Environment.EnvironmentName}");
+
+// Add Azure Key Vault configuration (only in production)
+if (!builder.Environment.IsDevelopment())
+{
+    var keyVaultUri = new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/");
+    builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential());
+}
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
