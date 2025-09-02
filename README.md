@@ -1,13 +1,13 @@
 # TodoGDS
 
-This repository contains a .NET 8.0 ASP.NET Core MVC web application named TodoGDS, designed for managing todo items. It uses Entity Framework Core with SQLite for local development and SQL Server for production deployments. The app includes Razor views, controllers, and static assets (e.g., GOV.UK frontend styles), with database migrations for schema management.
+This repository contains a .NET 8.0 ASP.NET Core MVC web application named TodoGDS, designed for managing todo items. It uses Entity Framework Core with SQLite for local development and SQL Server for production deployments. The app includes Razor views, controllers, and static assets (e.g., GOV.UK frontend styles). Database migrations are managed via Entity Framework Core but are not committed to the repository.
 
 ## Features
 
 - Create, read, update, and delete (CRUD) todo items.
 - Responsive UI using GOV.UK frontend components.
 - Database switching: SQLite for development, SQL Server for production.
-- Entity Framework Core migrations for database schema management.
+- Entity Framework Core migrations for database schema management (migrations are not committed to the repo).
 
 ## Prerequisites
 
@@ -42,12 +42,16 @@ This repository contains a .NET 8.0 ASP.NET Core MVC web application named TodoG
   dotnet ef database update
   ```
 
+  Note: Database migrations are not committed to the repository. If you need to modify the schema, generate migrations locally using `dotnet ef migrations add <MigrationName>`.
+
 ### Production (SQL Server)
 - Configure the connection string in `appsettings.json` or via environment variables (e.g., Azure App Service settings).
 - Apply migrations to the production database:
   ```bash
   dotnet ef database update
   ```
+
+  Note: Database migrations are not committed to the repository. If you need to modify the schema, generate migrations locally using `dotnet ef migrations add <MigrationName>`.
 
 ## Usage
 

@@ -31,7 +31,7 @@ Thumbs.db
 
 # Entity Framework migrations (if not committed)
 # Uncomment if you want to ignore migrations:
-# Migrations/
+Migrations/
 
 # Static web assets (if generated)
 # wwwroot/lib/
