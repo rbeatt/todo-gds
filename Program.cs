@@ -4,6 +4,9 @@ using TodoGDS.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Debug: Log the environment
+Console.WriteLine($"Environment: {builder.Environment.EnvironmentName}");
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

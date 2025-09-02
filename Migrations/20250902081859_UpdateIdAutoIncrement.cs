@@ -10,14 +10,6 @@ namespace TodoGDS.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<bool>(
-                name: "IsCompleted",
-                table: "TodoItems",
-                type: "INTEGER",
-                nullable: false,
-                oldClrType: typeof(bool),
-                oldType: "bit");
-
             migrationBuilder.AlterColumn<string>(
                 name: "Description",
                 table: "TodoItems",
@@ -31,7 +23,7 @@ namespace TodoGDS.Migrations
             migrationBuilder.AlterColumn<int>(
                 name: "Id",
                 table: "TodoItems",
-                type: "INTEGER",
+                type: "int",
                 nullable: false,
                 oldClrType: typeof(int),
                 oldType: "int")
@@ -42,14 +34,6 @@ namespace TodoGDS.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<bool>(
-                name: "IsCompleted",
-                table: "TodoItems",
-                type: "bit",
-                nullable: false,
-                oldClrType: typeof(bool),
-                oldType: "INTEGER");
-
             migrationBuilder.AlterColumn<string>(
                 name: "Description",
                 table: "TodoItems",
@@ -66,7 +50,7 @@ namespace TodoGDS.Migrations
                 type: "int",
                 nullable: false,
                 oldClrType: typeof(int),
-                oldType: "INTEGER")
+                oldType: "int")
                 .Annotation("Sqlite:Autoincrement", true)
                 .OldAnnotation("Sqlite:Autoincrement", true);
         }
