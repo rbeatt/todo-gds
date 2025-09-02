@@ -35,3 +35,6 @@ Thumbs.db
 
 # Static web assets (if generated)
 # wwwroot/lib/
+
+# Configuration files with secrets
+appsettings.json

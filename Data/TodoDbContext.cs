@@ -20,6 +20,7 @@ public class TodoDbContext : DbContext
         modelBuilder.Entity<TodoItem>(entity =>
         {
             entity.HasKey(e => e.Id);
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();  // Add auto-increment for Id
             entity.Property(e => e.Description)
                 .IsRequired()
                 .HasMaxLength(50);

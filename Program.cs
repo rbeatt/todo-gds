@@ -8,9 +8,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Configure database context based on environment
-// Temporarily use SQL Server for debugging
-builder.Services.AddDbContext<TodoDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+if (builder.Environment.IsDevelopment())
+{
+    // Use SQLite for development
+    builder.Services.AddDbContext<TodoDbContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+}
+else
+{
+    // Use SQL Server for production
+    builder.Services.AddDbContext<TodoDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+}
 
 // Register TodoService
 builder.Services.AddScoped<TodoService>();

@@ -1,6 +1,6 @@
 # TodoGDS
 
-This repository contains a .NET 9.0 ASP.NET Core MVC web application named TodoGDS, designed for managing todo items. It uses Entity Framework Core with SQLite for local development and SQL Server for production deployments. The app includes Razor views, controllers, and static assets (e.g., GOV.UK frontend styles), with database migrations for schema management.
+This repository contains a .NET 8.0 ASP.NET Core MVC web application named TodoGDS, designed for managing todo items. It uses Entity Framework Core with SQLite for local development and SQL Server for production deployments. The app includes Razor views, controllers, and static assets (e.g., GOV.UK frontend styles), with database migrations for schema management.
 
 ## Features
 
@@ -11,7 +11,7 @@ This repository contains a .NET 9.0 ASP.NET Core MVC web application named TodoG
 
 ## Prerequisites
 
-- .NET 9.0 SDK
+- .NET 8.0 SDK
 - Visual Studio Code or Visual Studio 2022
 - SQLite (for development) or SQL Server (for production)
 
